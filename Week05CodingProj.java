@@ -33,12 +33,13 @@ public class AsteriskLogger implements Logger
 	
 	public void error(String e)
 	{
+		// The little for loop here makes sure that the box fits the text nicely.
 		for(int i = 0; i<(e.length() + 13); i++)
 			System.out.print("*");
 		System.out.println("\n***Error: " + e + "***");
 		for(int i = 0; i<(e.length() + 13); i++)
 			System.out.print("*");
-		System.out.println("");
+		System.out.println(""); // Since the asterisks are printed without a newline, it has to print a blank newline to make sure the next thing printed is on a new line.
 	}
 }
 
