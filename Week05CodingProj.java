@@ -11,6 +11,9 @@ public class App
 		Logger logger = new AsteriskLogger();
 		logger.log("test 1");
 		logger.error("test 2");
+		Logger logger2 = new SpacedLogger();
+		logger2.log("test 3");
+		logger2.error("test 4");
 	}
 	
 }
@@ -35,6 +38,7 @@ public class AsteriskLogger implements Logger
 		System.out.println("\n***Error: " + e + "***");
 		for(int i = 0; i<(e.length() + 13); i++)
 			System.out.print("*");
+		System.out.println("");
 	}
 }
 
@@ -55,11 +59,11 @@ public class SpacedLogger implements Logger
 	
 	public void log(String e)
 	{
-		
+		System.out.println(space(e));
 	}
 	
 	public void error(String e)
 	{
-		
+		System.out.println("ERROR: " + space(e));
 	}
 }
